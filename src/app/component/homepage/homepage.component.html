@@ -1,0 +1,38 @@
+<header class="navbar">
+  <div class="container">
+    <nav class="nav-links">
+      <a (click)="openBody('AboutUs')">
+        <a>Startseite</a>
+      </a>
+
+      <a (click)="openBody('Products')">
+        <a>Dienstleistungen</a>
+      </a>
+
+      <a (click)="openBody('Contact')">
+        <a>Kontakt</a>
+      </a>
+
+      <a (click)="openBody('FAQ')">
+        <a>FAQ</a>
+      </a>
+
+
+
+
+    </nav>
+
+
+  </div>
+</header>
+
+<div class="body">
+  <div>
+    <app-aboutus *ngIf="showAboutUs"></app-aboutus>
+    <app-products *ngIf="showProducts"></app-products>
+    <app-contact *ngIf="showContact"></app-contact>
+  </div>
+</div>
+
+
+

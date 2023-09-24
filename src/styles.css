@@ -1,1 +1,15 @@
-/* You can add global styles to this file, and also import other style files */
+* {
+  margin: 0;
+  padding: 0;
+}/* You can add global styles to this file, and also import other style files */
+
+body{
+  background-image: url('src/assets/background.jpeg');
+  background-size: cover; /* Das Bild wird so skaliert, dass es den gesamten Bildschirm abdeckt */
+  background-repeat: no-repeat;
+  object-fit: none;
+  background-position: center center;
+  background-attachment: fixed;
+  margin: 0;
+
+}
