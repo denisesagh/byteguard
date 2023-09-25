@@ -11,6 +11,7 @@ import {UploadServiceService} from "../../services/uploadSerivce/upload-service.
 })
 export class ContactComponent implements OnInit {
 
+  captcha: string;
   FormData: FormGroup;
 
 
@@ -24,11 +25,20 @@ export class ContactComponent implements OnInit {
       message: new FormControl('', [Validators.required])
 
     })
+    this.captcha = '';
   }
 
   ngOnInit(): void {
 
 
+
+  }
+
+
+  resolved(captchaResponse: string) {
+    console.log(`Resolved captcha with response: ${captchaResponse}`);
+    this.captcha = captchaResponse;
+    document.getElementById('submit')?.removeAttribute('disabled');
   }
 
 

@@ -14,6 +14,7 @@ import {HttpClientModule} from "@angular/common/http";
 import {AngularFireModule} from "@angular/fire/compat";
 import {environment} from "../environments/environment";
 import { AngularFireStorageModule } from '@angular/fire/compat/storage';
+import {RecaptchaFormsModule, RecaptchaModule, RecaptchaV3Module} from "ng-recaptcha";
 
 
 
@@ -40,6 +41,9 @@ import { AngularFireStorageModule } from '@angular/fire/compat/storage';
       AngularFireModule,
       AngularFireStorageModule,
       ReactiveFormsModule,
+      RecaptchaV3Module,
+      RecaptchaModule,
+      RecaptchaFormsModule
 
 
     ],
