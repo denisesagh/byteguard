@@ -10,6 +10,15 @@ import { AboutusComponent } from './component/aboutus/aboutus.component';
 import {NgOptimizedImage} from "@angular/common";
 import { ContactComponent } from './component/contact/contact.component';
 import {ReactiveFormsModule} from "@angular/forms";
+import {HttpClientModule} from "@angular/common/http";
+import {AngularFireModule} from "@angular/fire/compat";
+import {environment} from "../environments/environment";
+import { AngularFireStorageModule } from '@angular/fire/compat/storage';
+
+
+
+
+
 
 
 @NgModule({
@@ -25,7 +34,14 @@ import {ReactiveFormsModule} from "@angular/forms";
         RouterOutlet,
         AppRoutingModule,
         NgOptimizedImage,
-      ReactiveFormsModule
+      ReactiveFormsModule,
+      HttpClientModule,
+      AngularFireModule.initializeApp(environment.firebaseConfig),
+      AngularFireModule,
+      AngularFireStorageModule,
+      ReactiveFormsModule,
+
+
     ],
   providers: [],
   bootstrap: [AppComponent]

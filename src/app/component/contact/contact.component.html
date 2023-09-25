@@ -1,3 +1,5 @@
+
+
 <div class="outercontainer">
   <div class="container">
     <div>
@@ -8,24 +10,57 @@
   </div>
 
   <div class="container">
-    <h2 class="text-center mb-5">Angular Contact Form Hosted On FireBase</h2>
-    <div class="row">
-      <div class="col-md-6 offset-md-3">
-        <form [formGroup]="FormData" (ngSubmit)="onsubmit(FormData.value)"><div class="form-group">
-          <label>Email</label>
-          <input type="email" class="form-control" name="Email" aria-describedby="emailHelp" placeholder="Enter email"formControlName="Email">
-          <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
-        </div>
-          <div class="form-group">
-            <label>Full Name</label>
-            <input type="text" class="form-control" name="Fullname" placeholder="Full Name" formControlName="Fullname">
+    <div class="row" >
+      <div class="col-md-20 offset-md-0">
+        <form [formGroup]="FormData" (ngSubmit)="onsubmit(FormData)"><div class="form-group">
+          <div class="formcontainer">
+            <div class="form-group" style="display: flex; gap: 20px">
+              <div>
+                <label>Vorname</label>
+                <input type="text" class="form-control" name="vorname" placeholder="Vorname" formControlName="firstname">
+              </div>
+              <div>
+                <label>Nachname</label>
+                <input type="text" class="form-control" name="nachname" placeholder="Nachname" formControlName="surname">
+              </div>
+
+            </div>
+
+
+            <div class="form-group">
+              <label>Firmenname</label>
+              <input type="text" class="form-control" name="firmenname" placeholder="Firmenname" formControlName="companyname">
+            </div>
+
+            <label>Thema</label>
+            <div class="form-select">
+
+              <select class="form-control" name="topic" formControlName="topic">
+                <option value="Frontend">Frontend</option>
+                <option value="Backend">Backend</option>
+                <option value="ETC">ETC</option>
+              </select>
+            </div>
+
+            <div class="form-group">
+              <label>E-Mail</label>
+              <input type="email" class="form-control" name="email" placeholder="E-Mail" formControlName="email">
+            </div>
+
+            <div class="form-group">
+              <label>Ihre Nachricht</label>
+              <textarea class="form-control" name="nachricht" placeholder="Ihre Nachricht" formControlName="message"></textarea>
+            </div>
+            <div style="display: flex; justify-content: center">
+              <button type="submit" style="margin-top: 10px" class="btn btn-primary" [disabled]="!FormData.valid">Senden</button>
+
+            </div>
+
           </div>
-          <div class="form-group">
-            <label>Comment</label>
-            <textarea class="form-control" formControlName="Comment" name="Comment">
-</textarea>
+
+
           </div>
-          <button type="submit" class="btn btn-primary" [disabled]="!FormData.valid">Submit</button>
+
         </form>
       </div>
     </div>
