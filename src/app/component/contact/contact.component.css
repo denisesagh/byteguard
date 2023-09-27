@@ -19,3 +19,10 @@ h1 {
   padding: 20px;
   box-shadow: 0px 0px 10px 0px #000000;
 }
+
+.custom-dialog-class {
+  backdrop-filter: blur(10px); /* Hintergrund verschwimmen lassen */
+  background-color: rgba(255, 255, 255, 0.3); /* Hintergrundfarbe */
+}
+
+

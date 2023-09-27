@@ -1,5 +1,5 @@
 import {Component, ViewChild} from '@angular/core';
-import {async} from "rxjs";
+import {async, identity} from "rxjs";
 
 
 @Component({
@@ -21,11 +21,41 @@ export class HomepageComponent {
     this.showFaq = false;
   }
 
-
   async openBody(bodyToOpen: string): Promise<void> {
     this.showAboutUs = bodyToOpen == 'AboutUs';
     this.showProducts = bodyToOpen == 'Products';
     this.showContact = bodyToOpen == 'Contact';
     this.showFaq = bodyToOpen == 'FAQ';
+
+    const productsElement = document.getElementById('products');
+    const aboutUsElement = document.getElementById('aboutUs');
+    const contactElement = document.getElementById('contact');
+    const faqElement = document.getElementById('faq');
+
+    if (this.showProducts && productsElement) {
+      productsElement.style.textDecoration = 'underline';
+    }
+    if (!this.showProducts && productsElement) {
+      productsElement.style.textDecoration = 'none';
+    }
+    if (this.showAboutUs && aboutUsElement) {
+      aboutUsElement.style.textDecoration = 'underline';
+    }
+    if (!this.showAboutUs && aboutUsElement) {
+      aboutUsElement.style.textDecoration = 'none';
+    }
+    if (this.showContact && contactElement) {
+      contactElement.style.textDecoration = 'underline';
+    }
+    if (!this.showContact && contactElement) {
+      contactElement.style.textDecoration = 'none';
+    }
+    if (this.showFaq && faqElement) {
+      faqElement.style.textDecoration = 'underline';
+    }
+    if (!this.showFaq && faqElement) {
+      faqElement.style.textDecoration = 'none';
+    }
   }
+
 }

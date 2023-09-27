@@ -14,7 +14,10 @@ import {HttpClientModule} from "@angular/common/http";
 import {AngularFireModule} from "@angular/fire/compat";
 import {environment} from "../environments/environment";
 import { AngularFireStorageModule } from '@angular/fire/compat/storage';
-import {RecaptchaFormsModule, RecaptchaModule, RecaptchaV3Module} from "ng-recaptcha";
+import {RecaptchaFormsModule, RecaptchaModule} from "ng-recaptcha";
+import { ContactDialogComponent } from './component/contact-dialog/contact-dialog.component';
+import {MDCDialog} from "@material/dialog";
+import {MatDialog, MatDialogModule} from "@angular/material/dialog";
 
 
 
@@ -28,7 +31,8 @@ import {RecaptchaFormsModule, RecaptchaModule, RecaptchaV3Module} from "ng-recap
     HomepageComponent,
     ProductsComponent,
     AboutusComponent,
-    ContactComponent
+    ContactComponent,
+    ContactDialogComponent
   ],
     imports: [
         BrowserModule,
@@ -41,9 +45,10 @@ import {RecaptchaFormsModule, RecaptchaModule, RecaptchaV3Module} from "ng-recap
       AngularFireModule,
       AngularFireStorageModule,
       ReactiveFormsModule,
-      RecaptchaV3Module,
+
       RecaptchaModule,
-      RecaptchaFormsModule
+      RecaptchaFormsModule,
+      MatDialogModule
 
 
     ],
