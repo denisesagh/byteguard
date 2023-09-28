@@ -1,6 +1,4 @@
 import {Component, ViewChild} from '@angular/core';
-import {async, identity} from "rxjs";
-import {animate, state, style, transition, trigger} from "@angular/animations";
 
 
 @Component({

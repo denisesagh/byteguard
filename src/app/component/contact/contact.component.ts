@@ -1,8 +1,7 @@
 import {Component, OnInit} from '@angular/core';
 import {FormBuilder, FormControl, FormGroup, Validators} from "@angular/forms";
 import {UploadServiceService} from "../../services/uploadSerivce/upload-service.service";
-import {MatDialog, MatDialogConfig} from "@angular/material/dialog";
-import {style, transition, trigger, animate, state} from "@angular/animations";
+import {style, transition, trigger, animate} from "@angular/animations";
 
 
 @Component({
@@ -26,7 +25,7 @@ export class ContactComponent implements OnInit {
 
 
 
-  constructor(private builder: FormBuilder, private uploadService: UploadServiceService, private dialog: MatDialog) {
+  constructor(private builder: FormBuilder, private uploadService: UploadServiceService) {
     this.FormData = this.builder.group({
       firstname: new FormControl('', [Validators.required]),
       surname: new FormControl('', [Validators.required]),
@@ -86,7 +85,7 @@ export class ContactComponent implements OnInit {
     }else{
       this.uploadService.uploadData(firstname, surname, companyname, topic, email, message).then(() =>
         this.sendSucess())
-          .catch(err => alert("Etwas ist schief gelaufen. Bitte versuchen Sie es erneut.")).then();
+          .catch(() => alert("Etwas ist schief gelaufen. Bitte versuchen Sie es erneut.")).then();
     }
 
   }
