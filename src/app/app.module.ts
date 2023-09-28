@@ -15,9 +15,9 @@ import {AngularFireModule} from "@angular/fire/compat";
 import {environment} from "../environments/environment";
 import { AngularFireStorageModule } from '@angular/fire/compat/storage';
 import {RecaptchaFormsModule, RecaptchaModule} from "ng-recaptcha";
-import { ContactDialogComponent } from './component/contact-dialog/contact-dialog.component';
 import {MDCDialog} from "@material/dialog";
 import {MatDialog, MatDialogModule} from "@angular/material/dialog";
+import {BrowserAnimationsModule} from "@angular/platform-browser/animations";
 
 
 
@@ -32,7 +32,6 @@ import {MatDialog, MatDialogModule} from "@angular/material/dialog";
     ProductsComponent,
     AboutusComponent,
     ContactComponent,
-    ContactDialogComponent
   ],
     imports: [
         BrowserModule,
@@ -45,6 +44,7 @@ import {MatDialog, MatDialogModule} from "@angular/material/dialog";
       AngularFireModule,
       AngularFireStorageModule,
       ReactiveFormsModule,
+      BrowserAnimationsModule,
 
       RecaptchaModule,
       RecaptchaFormsModule,

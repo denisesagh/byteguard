@@ -1,11 +1,13 @@
 import {Component, ViewChild} from '@angular/core';
 import {async, identity} from "rxjs";
+import {animate, state, style, transition, trigger} from "@angular/animations";
 
 
 @Component({
   selector: 'app-homepage',
   templateUrl: './homepage.component.html',
-  styleUrls: ['./homepage.component.css']
+  styleUrls: ['./homepage.component.css'],
+
 })
 export class HomepageComponent {
   @ViewChild(HomepageComponent) homepageComponent!: HomepageComponent;
@@ -14,12 +16,20 @@ export class HomepageComponent {
   public showContact: boolean;
   public showFaq: boolean;
 
+
+
   constructor() {
     this.showAboutUs = true;
     this.showProducts = false;
     this.showContact = false;
     this.showFaq = false;
+    sessionStorage.setItem('formSend', 'false');
   }
+
+
+
+
+
 
   async openBody(bodyToOpen: string): Promise<void> {
     this.showAboutUs = bodyToOpen == 'AboutUs';
@@ -31,6 +41,7 @@ export class HomepageComponent {
     const aboutUsElement = document.getElementById('aboutUs');
     const contactElement = document.getElementById('contact');
     const faqElement = document.getElementById('faq');
+
 
     if (this.showProducts && productsElement) {
       productsElement.style.textDecoration = 'underline';
