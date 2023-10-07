@@ -3,7 +3,6 @@ import { BrowserModule } from '@angular/platform-browser';
 
 import { AppComponent } from './app.component';
 import {RouterOutlet} from "@angular/router";
-import { HomepageComponent } from './component/homepage/homepage.component';
 import { AppRoutingModule } from './app-routing.module';
 import { ProductsComponent } from './component/products/products.component';
 import { AboutusComponent } from './component/aboutus/aboutus.component';
@@ -15,9 +14,14 @@ import {AngularFireModule} from "@angular/fire/compat";
 import {environment} from "../environments/environment";
 import { AngularFireStorageModule } from '@angular/fire/compat/storage';
 import {RecaptchaFormsModule, RecaptchaModule} from "ng-recaptcha";
-import {MDCDialog} from "@material/dialog";
-import {MatDialog, MatDialogModule} from "@angular/material/dialog";
 import {BrowserAnimationsModule} from "@angular/platform-browser/animations";
+import { HeaderComponent } from './component/header/header.component';
+import {MatTabsModule} from "@angular/material/tabs";
+import { DatabaseComponent } from './component/all-products/database/database.component';
+import { ItSecurityComponent } from './component/all-products/it-security/it-security.component';
+import { WebsitenComponent } from './component/all-products/websiten/websiten.component';
+import { SoftwareSolutionsComponent } from './component/all-products/software-solutions/software-solutions.component';
+
 
 
 
@@ -28,30 +32,34 @@ import {BrowserAnimationsModule} from "@angular/platform-browser/animations";
 @NgModule({
   declarations: [
     AppComponent,
-    HomepageComponent,
     ProductsComponent,
     AboutusComponent,
     ContactComponent,
+    HeaderComponent,
+    DatabaseComponent,
+    ItSecurityComponent,
+    WebsitenComponent,
+    SoftwareSolutionsComponent,
   ],
-    imports: [
-        BrowserModule,
-        RouterOutlet,
-        AppRoutingModule,
-        NgOptimizedImage,
-      ReactiveFormsModule,
-      HttpClientModule,
-      AngularFireModule.initializeApp(environment.firebaseConfig),
-      AngularFireModule,
-      AngularFireStorageModule,
-      ReactiveFormsModule,
-      BrowserAnimationsModule,
+  imports: [
+    BrowserModule,
+    RouterOutlet,
+    AppRoutingModule,
+    NgOptimizedImage,
+    ReactiveFormsModule,
+    HttpClientModule,
+    AngularFireModule.initializeApp(environment.firebaseConfig),
+    AngularFireModule,
+    AngularFireStorageModule,
+    ReactiveFormsModule,
+    BrowserAnimationsModule,
 
-      RecaptchaModule,
-      RecaptchaFormsModule,
-      MatDialogModule
+    RecaptchaModule,
+    RecaptchaFormsModule,
+    MatTabsModule
 
 
-    ],
+  ],
   providers: [],
   bootstrap: [AppComponent]
 })

@@ -2,9 +2,9 @@ import { Component } from '@angular/core';
 import {animate, style, transition, trigger} from "@angular/animations";
 
 @Component({
-  selector: 'app-aboutus',
-  templateUrl: './aboutus.component.html',
-  styleUrls: ['./aboutus.component.css'],
+  selector: 'app-it-security',
+  templateUrl: './it-security.component.html',
+  styleUrls: ['./it-security.component.css', '../../../app.component.css'],
   animations: [
     trigger('fadeSlideInOut', [
       transition(':enter', [
@@ -15,6 +15,6 @@ import {animate, style, transition, trigger} from "@angular/animations";
     ])
   ]
 })
-export class AboutusComponent {
+export class ItSecurityComponent {
 
 }

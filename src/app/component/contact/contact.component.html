@@ -1,15 +1,15 @@
 
-<script src='https://www.google.com/recaptcha/api.js?render=explicit" async defer'></script>
+<script src="https://www.google.com/recaptcha/api.js?render=explicit" async defer></script>
 <div class="outercontainer">
   <div class="container">
     <div>
-      <h1>
+      <h1 class="contact_header">
         Jetzt kontaktieren
       </h1>
     </div>
   </div>
 
-  <div class="container">
+  <div class="contact_container">
     <div class="row" >
       <div class="col-md-20 offset-md-0">
 
@@ -17,7 +17,7 @@
           <h2 style="text-align: center">
             Vielen Dank für Ihre Anfrage!
           </h2>
-          <p style="text-align: left" >Wir haben Ihre Nachricht erhalten und werden uns in Kürze bei Ihnen melden.<br> Bitte überprüfen Sie Ihren E-Mail-Posteingang für unser Angebot.</p>
+          <p style="text-align: left" >Wir haben Ihre Nachricht erhalten und werden uns in Kürze bei Ihnen melden.<br> Bitte überprüfen Sie demnächst Ihren E-Mail-Posteingang für unser Angebot.</p>
           <p>Falls Sie weitere Fragen haben oder zusätzliche Informationen benötigen,<br>zögern Sie nicht, uns zu kontaktieren.<br><br>
             Mit freundlichen Grüßen,<br>
             Ihr SecuretechFusion-Team</p>
@@ -28,8 +28,8 @@
 
 
         <form *ngIf="!sucess" @fadeSlideInOut id="contact_form" [formGroup]="FormData" (ngSubmit)="onsubmit(FormData)"><div class="form-group">
-          <div class="formcontainer">
-            <div class="form-group" style="display: flex; gap: 20px">
+           <div class="formcontainer">
+            <div class="form-group" style="display: flex; gap: 20px; justify-content: space-between">
               <div>
                 <label>Vorname</label>
                 <input type="text" class="form-control" name="vorname" placeholder="Vorname" formControlName="firstname" [maxlength]="30">
@@ -51,9 +51,10 @@
             <div class="form-select">
 
               <select class="form-control" name="topic" formControlName="topic">
-                <option value="Frontend">Frontend</option>
-                <option value="Backend">Backend</option>
-                <option value="ETC">ETC</option>
+                <option value="Website">Website</option>
+                <option value="Datenbankentwicklung">Datenbankentwicklung</option>
+                <option value="Individuelle Softwarelösung">Individuelle Softwarelösung</option>
+                <option value="IT-Sicherheit">IT-Sicherheit</option>
               </select>
             </div>
 
@@ -66,8 +67,8 @@
               <label>Ihre Nachricht</label>
               <textarea class="form-control" name="nachricht" placeholder="Ihre Nachricht" formControlName="message" [maxlength]="650"></textarea>
             </div>
-            <div style="display: flex; justify-content: center; align-items: center; margin-top: 15px; gap: 15px">
-              <button type="submit" style="margin-top: 10px" class="btn btn-primary" [disabled]="!FormData.valid || !captcha">Senden</button>
+            <div class="submit_area">
+              <button type="submit" class="btn btn-primary" style="margin-bottom: 10px" [disabled]="!FormData.valid || !captcha">Senden</button>
               <div [hidden]="captcha">
                 <re-captcha (resolved)="resolved($event)" siteKey='6LdcTVMoAAAAAAJ_fo0D6wzdO94Q3ax2wZxOD33Y'></re-captcha>
               </div>

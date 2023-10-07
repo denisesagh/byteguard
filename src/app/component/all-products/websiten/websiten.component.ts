@@ -1,10 +1,11 @@
 import { Component } from '@angular/core';
 import {animate, style, transition, trigger} from "@angular/animations";
+import { NgOptimizedImage } from '@angular/common'
 
 @Component({
-  selector: 'app-aboutus',
-  templateUrl: './aboutus.component.html',
-  styleUrls: ['./aboutus.component.css'],
+  selector: 'app-websiten',
+  templateUrl: './websiten.component.html',
+  styleUrls: ['./websiten.component.css', '../../../app.component.css'],
   animations: [
     trigger('fadeSlideInOut', [
       transition(':enter', [
@@ -15,6 +16,9 @@ import {animate, style, transition, trigger} from "@angular/animations";
     ])
   ]
 })
-export class AboutusComponent {
-
+export class WebsitenComponent {
+  backbutton: string;
+  constructor() {
+    this.backbutton = "/assets/back_button.png";
+  }
 }

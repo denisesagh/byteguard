@@ -11,6 +11,13 @@ h1 {
   }
 }
 
+.submit_area{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 15px;
+  gap: 15px
+}
 
 .formcontainer{
   background-color: rgba(255, 255, 255, 0.3);
@@ -19,6 +26,25 @@ h1 {
   padding: 20px;
   box-shadow: 0 0 10px 0 #000000;
 }
+
+@media (max-width: 750px) {
+  .formcontainer{
+    width: 90%;
+    margin: 0 auto;
+  }
+  .submit_area{
+    display: block;
+  }
+  .contact_header{
+    text-align: center;
+  }
+  .submit_area{
+    text-align: center;
+  }
+}
+
+
+
 
 .custom-dialog-class {
   backdrop-filter: blur(10px); /* Hintergrund verschwimmen lassen */
@@ -34,3 +60,18 @@ h1 {
   justify-content: center;
 }
 
+.contact_container {
+  display: flex;
+  justify-content: center;
+  gap: 40px;
+  align-items: center;
+  padding: 20px;
+  font-family: Arial, sans-serif;
+}
+
+@media (max-width: 600px) {
+  .contact_container {
+    display: block;
+    padding: 0;
+  }
+}

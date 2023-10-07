@@ -7,17 +7,6 @@ body {
 
 
 
-.columnText{
-  background-color: rgba(255, 255, 255, 0.3);
-  color: white;
-  border-radius: 5px;
-  padding: 20px;
-  max-width: 50%;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-}
-
-
-
 .container {
   display: flex;
   justify-content: center;
@@ -27,6 +16,69 @@ body {
   font-family: Arial, sans-serif;
 }
 
-.outercontainer{
+
+h1 {
+  color: #ffffff;
+  font-size: 60px;
+  justify-content: center;
+  padding-top: 20px;
+}
+
+.columnText{
+  background-color: rgba(255, 255, 255, 0.3);
+  color: white;
+  border-radius: 5px;
+  padding: 20px;
+  margin: 20px;
+
+}
+
+
+
+.textcontainer {
   display: block;
+  align-items: center;
+  padding: 20px;
+  font-family: Arial, sans-serif;
+  width: 80%;
+  margin: 0 auto;
+}
+@media (max-width: 750px) {
+  .textcontainer {
+    width: 100%;
+  }
+}
+
+.outercontainer {
+  display: block;
+}
+
+
+.backbutton{
+  background: rgba(255, 255, 255, 0);
+}
+
+.productInformation{
+  display: block;
+  align-items: center;
+}
+
+
+
+.productPicture{
+  width: 100%;
+}
+
+.columnContainer{
+  display: flex;
+justify-content: space-evenly;
+}
+
+@media (max-width: 1200px) {
+  .productInformation{
+    display: block;
+  }
+  .columnContainer{
+    display: block;
+  }
 }
